@@ -4,7 +4,8 @@ namespace CalcOfProductPrice
 {
     class Program
     {
-        static readonly int[] denominations = new int[] { 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1 }; // in pence
+        //denominations of UK in pence 
+        static readonly int[] denominations = new int[] { 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1 }; 
 
         static void Main(string[] args)
         {
@@ -15,14 +16,14 @@ namespace CalcOfProductPrice
             Console.WriteLine("Enter the price of the product (in pounds): ");
             decimal productPriceInPounds = Convert.ToDecimal(Console.ReadLine());
 
-            // Convert both amounts to pence (100 pence = 1 pound)
+            // Converting both input amounts to pence (100 pence = 1 pound)
             int totalAmountInPence = (int)(amountInPounds * 100);
             int productPriceInPence = (int)(productPriceInPounds * 100);
 
-            // Calculate the change to be returned
+            // Calculating the change to be returned
             int changeInPence = totalAmountInPence - productPriceInPence;
 
-            // If there is no change to be returned
+            // If there is no change to be returned then printing message and returning
             if (changeInPence < 0)
             {
                 Console.WriteLine("Insufficient funds!");
